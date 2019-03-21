@@ -84,6 +84,7 @@ abstract class DefaultDeployer extends AbstractDeployer
         $this->log('<h1>Publishing app</>');
         $this->doCreateSymlink();
         $this->remoteSymLinkHasBeenCreated = true;
+        $this->afterPublishing();
         $this->doResetOpCache();
         $this->doKeepReleases();
     }
@@ -131,6 +132,11 @@ abstract class DefaultDeployer extends AbstractDeployer
     }
 
     public function beforePublishing()
+    {
+        $this->log('<h3>Nothing to execute</>');
+    }
+
+    public function afterPublishing()
     {
         $this->log('<h3>Nothing to execute</>');
     }
